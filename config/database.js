@@ -1,6 +1,6 @@
 const {MongoClient} = require('mongodb');
 
-let url = 'mongodb+srv://root:root123@dbtest.w4xhtn5.mongodb.net/?retryWrites=true&w=majority';
+let url = 'mongodb+srv://dbtest:admin123@dbtest.fdebyxm.mongodb.net/?retryWrites=true&w=majority';
 
 async function connectDB() {
     const client = new MongoClient(url);

@@ -1,7 +1,7 @@
 let axios = require('axios');
 
 const API_DB = axios.create({
-    baseURL: 'https://imaginative-pavlova-bd4f45.netlify.app',
+    baseURL: 'https://rococo-mooncake-145b90.netlify.app',
     timeout: 10000,
     headers: {'X-Custom-header': 'foobar'}
 })
