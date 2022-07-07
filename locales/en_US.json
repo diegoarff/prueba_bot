@@ -24,6 +24,7 @@
     "emailBtn":"Finish and send an email with the invoice ✉️",
     "deleteMoreBtn":"Delete more products 📤",
     "payCardBtn":"Pay with a Card!",
+    "filterProductBtn":"Filter Products 📚",
 
     "start": "<b>Hi %s 👋 🤖!\n\nWelcome to Foo Market 6  🛒.</b>\nWe appreciate your interest in the Company 🏬. You can take a look to our products with the <i>Show Products 🛍</i> option!",
     "menu": "<b>Hi again! 👋 🤖</b>\n\nIn Foo Market 6  🛒 we appreciate your interest in the Company 🏬. Take a look to our products with the <i>Show Products 🛍</i> option!",
