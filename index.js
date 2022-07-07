@@ -132,7 +132,7 @@ bot.on('/updatepage', msg => {
     
     //Define los botones a mostrar al final de la lista
     let replyMarkup = bot.inlineKeyboard([
-        [btn(__('searchBtn'), { callback: '/searchProduct' })],
+        [btn(__('searchBtn'), { callback: '/searchProduct' }), btn(__('filterProductBtn'), { callback: '/filterProduct' })],
         [btn(__('addProductsBtn'), { callback: '/cart' })],
         [btn(__('menuBtn'), { callback: '/menu' })]
     ]);
