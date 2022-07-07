@@ -4,7 +4,6 @@ var i18n = require("i18n");
 const { API_DB, ENDPOINTS_CARTS } = require('~inst');
 
 const viewCart = require('./viewCart');
-const { __ } = require('i18n');
 
 async function sendMail(userId) {
 
@@ -34,11 +33,13 @@ async function sendMail(userId) {
             return new Date().toLocaleDateString();
         }
     
+        let message = __('sendMailText', firstName, lastName, locations[location - 1], pay_methods[payment_method - 1], msg);
+
         let info = await transporter.sendMail({
             from: '"Foo Market 6" <equipo7socialoplesk@gmail.com>', 
             to: `${email}, equipo7socialoplesk@gmail.com`, 
             subject: "Tu factura de compra en Foo Market 6 ✔", 
-            text: __('sendMailText', firstName, lastName, locations[location - 1], pay_methods[payment_method - 1], msg)
+            text: `${message}`
             },
             function (error) {
                 if (error) {
