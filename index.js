@@ -702,7 +702,7 @@ bot.on('ask.delProduct', function (msg) {
                 let areInCart = await deleteProducts(id, validProducts);
 
                 if(!areInCart) {
-                    return bot.sendMessage(id, __('delProductNotInCart'))
+                    return bot.sendMessage(id, __('delProductNotInCart'), {ask: 'delProduct'})
                 } else {
 
                     let products = `${validProducts}`
