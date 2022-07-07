@@ -15,11 +15,15 @@ async function deleteProducts(userId, userProducts) {
         //Crea un array de los id de los productos existentes en el carrito
         arr = cart[0].products.map(e => {return e.productId})
 
+        //Remueve los ids repetidos de los productos nuevos ingresados por el usuario
+        let filteredUP = userProducts.filter((e, idx) => {
+            return userProducts.indexOf(e) == idx;
+        })
+
         //Si en los productos ingresados por el usuario hay un id
         //que no se encuentra en el carrito, devuelve true
-        let areNotInCart = userProducts.some(e => !arr.includes(e));
+        let areNotInCart = filteredUP.some(e => !arr.includes(e));
 
-        console.log(areNotInCart)
         if(areNotInCart) {
             return false;
         } else {
