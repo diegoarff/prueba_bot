@@ -3,7 +3,7 @@ var i18n = require("i18n");
 
 const { API_DB, ENDPOINTS_CARTS } = require('~inst');
 
-const viewCart = require('../../prueba/functions_bot/viewCart');
+const viewCart = require('./viewCart');
 
 async function sendMail(userId) {
 
