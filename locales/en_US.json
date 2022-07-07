@@ -62,5 +62,6 @@
     "delProductInvalid": "❌ Your input is invalid. Please try again!",
     "delProduct": "Products %s were deleted successfully. 📤\n\n<i>What else can I do for you? 🤖</i>",
     "searchResults":"<b>Showing results:</b>\n\n<b>🔑 ID</b>: %s\n\n<b>🖋 Name</b>: %s\n\n<b>🏷 Price</b>: $%s\n\n<b>🗄 Category</b>: %s\n\n<b>📃 Description</b>: %s\n\n%s",
-    "delProductNotInCart":"❌ Your input contains products that are not in your cart! Please, try again."
+    "delProductNotInCart":"❌ Your input contains products that are not in your cart! Please, try again.",
+    "sendMailText":"<b>Thanks for shopping on Foo Market 6!</b><hr>\nHere is your bill:\n\n<b>> Date:</b> %s\n<b>> Name:</b> %s\n<b>> Last Name:</b> %s\n<b>> Location:</b> %s\n<b>> Payment Method:</b> %s\n\n<b>> Products:</b>\n\n%s"
 }
