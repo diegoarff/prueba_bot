@@ -30,7 +30,7 @@ async function deleteProducts(userId, userProducts) {
 
             await API_DB.put(ENDPOINTS_CARTS.DELETE_CART_PRODUCTS+`?userId=${ userId }`, filteredUP);
 
-            return console.log('Productos eliminados con éxito');
+            return true;
         }
     } catch (err) {
         console.log(err);
