@@ -15,24 +15,18 @@ async function deleteProducts(userId, userProducts) {
         //Crea un array de los id de los productos existentes en el carrito
         arr = cart[0].products.map(e => {return e.productId})
 
+        //Si en los productos ingresados por el usuario hay un id
+        //que no se encuentra en el carrito, devuelve true
+        let areNotInCart = userProducts.some(e => !arr.includes(e));
 
-        let filteredUP = userProducts.filter((e, idx) => {
-            return userProducts.indexOf(e) == idx;
-        })
+        if(areNotInCart) {
+            return false;
+        } else {
 
-        //En caso de que el mensaje del usuario tenga ids de productos repetidos, los quita y devuelve los originales
-        //Ej: 
-        //Usuario ingresa: [1, 1, 2, 3, 2, 9, 9]
-        //
-        //filteredUP = [1, 2, 3, 9]
+            await API_DB.put(ENDPOINTS_CARTS.DELETE_CART_PRODUCTS+`?userId=${ userId }`, filteredUP);
 
-        //Devuelve los ids diferentes entre los dos arrays
-        filteredUP = filteredUP.filter(e => arr.includes(e));
-
-        await API_DB.put(ENDPOINTS_CARTS.DELETE_CART_PRODUCTS+`?userId=${ userId }`, filteredUP);
-
-        return console.log('Productos eliminados con éxito');
-
+            return true;
+        }
     } catch (err) {
         console.log(err);
     }

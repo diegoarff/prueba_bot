@@ -1,3 +1,5 @@
+var i18n = require("i18n");
+
 const { API_DB, ENDPOINTS_PRODUCTS } = require('~inst');
 
 async function getInfoProductId (id) {
@@ -7,13 +9,7 @@ async function getInfoProductId (id) {
     let res = await API_DB.get(ENDPOINTS_PRODUCTS.GET_PRODUCTS + `?productId=${ id }`);
     let item = res.data;
 
-    let message = `<b>Showing results:</b>\n\n` +
-        `<b>🔑 ID</b>: ${item[0].id}\n\n` +
-        `<b>🖋 Name</b>: ${item[0].name}\n\n` +
-        `<b>🏷 Price</b>: ${item[0].price} $\n\n` +
-        `<b>🗄 Category</b>: ${item[0].category}\n\n` +
-        `<b>📃 Description</b>: ${item[0].description}\n\n` +
-        `${item[0].image}`;
+    let message = __('searchResults', item[0].id, item[0].name, item[0].price, item[0].category, item[0].description, item[0].image);
 
     return message;
     

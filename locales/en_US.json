@@ -60,6 +60,7 @@
     "email": "We sent you an email with the bill.\n\nThanks for choosing us! 🤖💌\n\nIf you want to do another purchase 🛍 send /start",
     "deleteProducts": "What products do you want to delete?\n\n<i>Send the 🆔 of your prooducts that you want to delete\nEx: 1, 4, 8, 12</i>",
     "delProductInvalid": "❌ Your input is invalid. Please try again!",
-    "delProduct": "Products %s were deleted successfully. 📤\n\n<i>What else can I do for you? 🤖</i>"
-
+    "delProduct": "Products %s were deleted successfully. 📤\n\n<i>What else can I do for you? 🤖</i>",
+    "searchResults":"<b>Showing results:</b>\n\n<b>🔑 ID</b>: %s\n\n<b>🖋 Name</b>: %s\n\n<b>🏷 Price</b>: $%s\n\n<b>🗄 Category</b>: %s\n\n<b>📃 Description</b>: %s\n\n%s",
+    "delProductNotInCart":"❌ Your input contains products that are not in your cart! Please, try again."
 }

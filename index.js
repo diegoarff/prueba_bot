@@ -541,9 +541,7 @@ bot.on('/delivery', msg => {
         [btn(__('menuBtn'), { callback : '/menu'})]
     ]);
 
-    let message = __('delivery');
-
-    return bot.sendMessage(id, `<b>Our available delivery zones:</b>\n\n${ message }`, { replyMarkup, once: true , parseMode: 'html' });
+    return bot.sendMessage(id, __('delivery'), { replyMarkup, once: true , parseMode: 'html' });
 });
 
 bot.on('callbackQuery', msg => {
@@ -699,11 +697,15 @@ bot.on('ask.delProduct', function (msg) {
             if(!validProducts) {
                 return bot.sendMessage(id, __('delProductInvalid'), {ask: 'delProduct'});
             }  else {
-
-                let products = `${validProducts}`
                 
                 //Agrega los productos al carrito
-                await deleteProducts(id, validProducts);
+                let areInCart = await deleteProducts(id, validProducts);
+
+                if(!areInCart) {
+                    return bot.sendMessage(id, __('delProductNotInCart'))
+                }
+
+                let products = `${validProducts}`
 
                 return bot.sendMessage(id, __('delProduct', products), { replyMarkup , parseMode: 'html', once: true});
 
