@@ -19,13 +19,14 @@ async function deleteProducts(userId, userProducts) {
         //que no se encuentra en el carrito, devuelve true
         let areNotInCart = userProducts.some(e => !arr.includes(e));
 
+        console.log(areNotInCart)
         if(areNotInCart) {
             return false;
         } else {
 
             await API_DB.put(ENDPOINTS_CARTS.DELETE_CART_PRODUCTS+`?userId=${ userId }`, filteredUP);
 
-            return true;
+            return console.log('Productos eliminados con éxito');
         }
     } catch (err) {
         console.log(err);

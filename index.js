@@ -701,13 +701,16 @@ bot.on('ask.delProduct', function (msg) {
                 //Agrega los productos al carrito
                 let areInCart = await deleteProducts(id, validProducts);
 
+                console.log(areInCart)
+                
                 if(!areInCart) {
                     return bot.sendMessage(id, __('delProductNotInCart'))
+                } else {
+
+                    let products = `${validProducts}`
+
+                    return bot.sendMessage(id, __('delProduct', products), { replyMarkup , parseMode: 'html', once: true});
                 }
-
-                let products = `${validProducts}`
-
-                return bot.sendMessage(id, __('delProduct', products), { replyMarkup , parseMode: 'html', once: true});
 
             } 
 
