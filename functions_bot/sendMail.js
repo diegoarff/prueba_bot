@@ -33,12 +33,13 @@ async function sendMail(userId) {
             return new Date().toLocaleDateString();
         }
     
-        let message = __('sendMailText', firstName, lastName, locations[location - 1], pay_methods[payment_method - 1], msg);
+        let message = __('sendMailText', date(), firstName, lastName, locations[location - 1], pay_methods[payment_method - 1], msg);
+        let subject = __('emailSubject');
 
         let info = await transporter.sendMail({
             from: '"Foo Market 6" <equipo7socialoplesk@gmail.com>', 
             to: `${email}, equipo7socialoplesk@gmail.com`, 
-            subject: "Tu factura de compra en Foo Market 6 ✔", 
+            subject: `${subject}`, 
             text: `${message}`
             },
             function (error) {
